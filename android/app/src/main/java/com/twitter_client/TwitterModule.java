@@ -60,4 +60,46 @@ public class TwitterModule extends ReactContextBaseJavaModule implements Activit
         }
     }
 
+//   @ReactMethod
+//   public void tweet() {
+//       if (getCurrentActivity() != null) {
+//           new TweetComposer.Builder(getCurrentActivity())
+//                   .text("just setting up my Twitter Kit.")
+//                   .show();
+//       }
+//   }
+//
+//   @ReactMethod
+//   public void isLogined(Promise promise) {
+//       promise.resolve(!TwitterCore.getInstance().getSessionManager().getSessionMap().isEmpty());
+//   }
+//
+//   @ReactMethod
+//   public void getTimeline(final Promise promise) {
+//       TwitterApiClient twitterApiClient = TwitterCore.getInstance().getApiClient();
+//       StatusesService statusesService = twitterApiClient.getStatusesService();
+//       Call<List<Tweet>> call = statusesService.homeTimeline(20, null, null, null, null, true, true);
+//       call.enqueue(new Callback<List<Tweet>>() {
+//           @Override
+//           public void success(Result<List<Tweet>> result) {
+//               WritableArray array = Arguments.createArray();
+//               for (Tweet tw : result.data) {
+//                   WritableMap map = Arguments.createMap();
+//                   map.putDouble("id", tw.getId());
+//                   map.putString("text", tw.text);
+//                   WritableMap user = Arguments.createMap();
+//                   user.putString("name", tw.user.name);
+//                   map.putMap("user", user);
+//                   array.pushMap(map);
+//               }
+//               promise.resolve(array);
+//           }
+//
+//           @Override
+//           public void failure(TwitterException exception) {
+//               promise.resolve(Arguments.createArray());
+//           }
+//       });
+//   }
+
 }
